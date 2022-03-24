@@ -1,0 +1,15 @@
+header h1{
+    color: #ccc;
+}
+nav ul{
+    
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin-right: 10px;
+    color: #ddd;
+}
+nav ul li:hover, nav ul li.active{
+    color: #999;
+}
