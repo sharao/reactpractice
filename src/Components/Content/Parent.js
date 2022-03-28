@@ -5,18 +5,34 @@ import Child from './Child'
 import './Parent.css'
 
 export default class Parent extends Component {
-    state = {
-        greet : "Hi I am "
-    }
-    greetingFromParent = (user) =>{
-        this.setState({greet: "Hi I am " + user});
-    }
+   // Constructor 
+   constructor(props) {
+    super(props);
+
+    this.state = {
+        items: [],
+        DataisLoaded: false
+    };
+}
+
+componentDidMount() {
+  fetch(
+"https://jsonplaceholder.typicode.com/posts")
+      .then((res) => res.json())
+      .then((json) => {
+          this.setState({
+              items: json,
+              DataisLoaded: true
+          });
+          console.log(this.state);
+      })
+}
   render() {
     return (
       <div>
           <Header/>
           <div className='container'>
-              <Child greetingFromParent = {this.greetingFromParent}>{this.state.greet}</Child>
+              <Child props = {this.state}></Child>
           </div>
           <Footer/>
       </div>
