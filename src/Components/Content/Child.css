@@ -1,0 +1,12 @@
+article{
+    margin: .3em;
+    padding: .3rem;
+    background-color: #eee;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+article > h2,
+article > p {
+    margin: .2rem;
+    font-size: 1rem;
+    text-align: justify;
+}
